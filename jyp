@@ -13,3 +13,69 @@ for i in range(1,n):
         max_marks = marks[i]
 
 print("Maximum marks scored in class is ", max_marks)
+
+
+
+# Program to calculate electricity bill based on user category
+
+print("1. Domestic Users")
+print("2. Commercial Users")
+print("3. Industrial Users")
+
+choice = int(input("Enter your category (1/2/3): "))
+units = int(input("Enter total units consumed: "))
+bill = 0
+
+if choice == 1:  
+    if units <= 100:
+        bill = units * 3
+    elif units <= 200:
+        bill = (100 * 3) + (units - 100) * 5
+    else:
+        bill = (100 * 3) + (100 * 5) + (units - 200) * 8
+    bill = bill + 50  
+
+elif choice == 2:  
+    if units <= 300:
+        bill = units * 6
+    elif units <= 600:
+        bill = (300 * 6) + (units - 300) * 8
+    else:
+        bill = (300 * 6) + (300 * 8) + (units - 600) * 12
+    bill = bill + 200 
+
+elif choice == 3: 
+    if units <= 500:
+        bill = units * 9
+    elif units <= 1000:
+        bill = (500 * 9) + (units - 500) * 15
+    else:
+        bill = (500 * 9) + (500 * 15) + (units - 1000) * 20
+    bill = bill + 1000
+
+else:
+    print("Invalid category!")
+
+print("Total Electricity Bill = ₹", bill)
+
+
+
+# Program to check eligibility for training or field visit
+
+semester = int(input("Enter your semester number: "))
+branch = input("Enter your branch (CSE/AIML/CIVIL/ECE): ").upper()
+
+if (semester == 1 or semester == 3 or semester == 5 or semester == 7) and branch == "CSE":
+    print("You are eligible for placement training.")
+
+elif (semester == 1 or semester == 3 or semester == 5 or semester == 7) and branch == "AIML":
+    print("You are eligible for AI training.")
+
+elif (semester == 2 or semester == 4 or semester == 6) and branch == "CIVIL":
+    print("You are eligible to go for a field visit.")
+
+elif (semester == 2 or semester == 4 or semester == 6) and branch == "ECE":
+    print("You are eligible to go for an electronics company visit.")
+
+else:
+    print("Eligibility criteria not satisfied.")
