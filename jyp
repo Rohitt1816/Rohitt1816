@@ -1,0 +1,15 @@
+n = int(input("Enter the no of student: "))
+
+marks = []
+
+print("Enter the marks of students:-")
+for i in range(n):
+    s_marks = int(input(f"Enter the marks of the {i3+1} student"))
+    marks.append(s_marks)
+print(marks)
+max_marks= marks[0]
+for i in range(1,n):
+    if marks[i] > max_marks:
+        max_marks = marks[i]
+
+print("Maximum marks scored in class is ", max_marks)
